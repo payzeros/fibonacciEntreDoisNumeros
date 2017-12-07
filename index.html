@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fibonacci</title>
+
+</head>
+
+<body>
+
+    <p>
+        <span>Primeiro Número</span>
+        <input id="primeiro" type="number">
+    </p>
+    <p>
+        <span>Segundo Número</span>
+        <input id="segundo" type="number">
+    </p>
+    <p>
+        <button onclick='gerar(document.getElementById("primeiro").value, document.getElementById("segundo").value)'>Calcular</button>
+    </p>
+    <p id="resultado">
+
+    </p>
+
+    <script>
+
+        function gerar(primeiro, segundo) {
+            var numero = 0;
+            var proximo = 1;
+            var auxiliar;
+            var valor = "";
+
+            while (numero <= segundo) {
+
+                if (numero != proximo) {
+                    if (numero >= primeiro) {
+                        valor += numero + ", ";
+                    }
+                }
+                auxiliar = proximo;
+                proximo = proximo + numero;
+                numero = auxiliar;
+            }
+            document.getElementById("resultado").innerHTML = valor;
+        }
+
+    </script>
+</body>
+
+</html>
